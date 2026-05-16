@@ -1,0 +1,150 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+  (window as any).ScrollTrigger = ScrollTrigger;
+}
+
+export default function WhoItsFor() {
+  const t = useTranslations('who');
+  const root = useRef<HTMLElement>(null);
+
+  const cards = [
+    { key: 'freelancers', bg: '#F4D580', color: '#0B2150', rotate: -14 },
+    { key: 'smes', bg: '#1A4F9E', color: '#FAF6EC', rotate: -5 },
+    { key: 'startups', bg: '#D4A017', color: '#0B2150', rotate: 5 },
+    { key: 'groups', bg: '#0B2150', color: '#FAF6EC', rotate: 14 },
+  ] as const;
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const cardsEls = gsap.utils.toArray<HTMLElement>('[data-card]');
+      // Start state: cards stacked center, no rotation
+      cardsEls.forEach((c) => {
+        gsap.set(c, {
+          rotate: 0,
+          y: 80,
+          x: 0,
+          scale: 0.92,
+          opacity: 0,
+        });
+      });
+
+      // Headline reveal
+      gsap.from('[data-who-headline] > span', {
+        yPercent: 110,
+        duration: 1,
+        stagger: 0.06,
+        ease: 'expo.out',
+        scrollTrigger: {
+          trigger: root.current,
+          start: 'top 70%',
+        },
+      });
+
+      // Fan out the cards as the section scrolls in
+      ScrollTrigger.create({
+        trigger: root.current,
+        start: 'top 60%',
+        end: 'bottom bottom',
+        scrub: 1,
+        onUpdate: (st) => {
+          const p = st.progress;
+          cardsEls.forEach((c, i) => {
+            const final = cards[i];
+            const offsetX = (i - (cards.length - 1) / 2) * 250;
+            gsap.to(c, {
+              x: offsetX * p,
+              y: 60 - 60 * p,
+              rotate: final.rotate * p,
+              scale: 0.92 + 0.08 * p,
+              opacity: Math.min(1, p * 2),
+              duration: 0.4,
+              overwrite: 'auto',
+              ease: 'power2.out',
+            });
+          });
+        },
+      });
+
+      // Tilt on hover
+      cardsEls.forEach((c) => {
+        c.addEventListener('mouseenter', () => {
+          gsap.to(c, { y: '-=12', scale: 1.04, duration: 0.4, ease: 'power2.out' });
+        });
+        c.addEventListener('mouseleave', () => {
+          gsap.to(c, { y: '+=12', scale: 1.0, duration: 0.4, ease: 'power2.out' });
+        });
+      });
+    }, root);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section
+      ref={root}
+      id="who"
+      className="section-pad relative bg-cream noise-overlay overflow-hidden"
+    >
+      <div className="max-w-[1440px] mx-auto px-6 md:px-10">
+        <div className="text-center mb-12">
+          <div className="pill bg-navy text-cream inline-flex">
+            <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
+            {t('tag')}
+          </div>
+
+          <h2 data-who-headline className="h-mega text-navy text-[clamp(48px,8vw,140px)] mt-6">
+            {(t('title') as string).split(' ').map((w, i) => (
+              <span key={i} className="inline-block split-line mr-[0.25em]">
+                <span>{w}</span>
+              </span>
+            ))}
+          </h2>
+
+          <p className="mt-4 text-navy/70 text-sm md:text-base font-semibold tracking-widest uppercase">
+            {t('subtitle')}
+          </p>
+        </div>
+
+        {/* Cards stage */}
+        <div className="relative h-[520px] md:h-[600px] flex items-center justify-center">
+          {cards.map((c, i) => (
+            <article
+              key={c.key}
+              data-card
+              className="absolute w-[240px] h-[330px] md:w-[280px] md:h-[380px] rounded-3xl p-7 flex flex-col justify-between cursor-pointer shadow-[0_30px_80px_rgba(0,0,0,0.15)] transition-shadow hover:shadow-[0_40px_100px_rgba(0,0,0,0.25)]"
+              style={{ background: c.bg, color: c.color, zIndex: 10 + i }}
+            >
+              <div className="flex items-start justify-between">
+                <span
+                  className="inline-flex items-center justify-center w-9 h-9 rounded-full text-[11px] font-extrabold"
+                  style={{ background: c.color, color: c.bg }}
+                >
+                  0{i + 1}
+                </span>
+                <svg className="w-5 h-5 opacity-60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M7 17L17 7M9 7h8v8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+
+              <div>
+                <h3 className="font-display font-black text-2xl md:text-3xl uppercase leading-[0.95] tracking-tight">
+                  {t(`cards.${c.key}.title` as any)}
+                </h3>
+                <p className="mt-4 text-[13px] leading-relaxed opacity-85">
+                  {t(`cards.${c.key}.body` as any)}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

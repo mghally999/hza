@@ -1,0 +1,189 @@
+{
+  "brand": {
+    "name": "HZA",
+    "fullName": "Alhadf Alzaki",
+    "tagline": "Accounting & Bookkeeping L.L.C."
+  },
+  "nav": {
+    "services": "Services",
+    "company": "Company",
+    "resources": "Resources",
+    "pricing": "Pricing",
+    "talk": "Talk to us",
+    "lang": "ع"
+  },
+  "hero": {
+    "tag": "Accounting & Tax for Smart Businesses",
+    "title1": "AIM HIGHER.",
+    "title2": "PAY SMARTER.",
+    "subtitle": "She hits the target every time.",
+    "lead": "UAE-based accountants for founders, SMEs, and groups that would rather build than balance books. Compliant, precise, and genuinely on your side.",
+    "ctaPrimary": "Talk to us",
+    "ctaSecondary": "View pricing",
+    "checks": {
+      "0": "VAT & CT Compliant",
+      "1": "Bilingual EN / AR",
+      "2": "Fixed-fee plans"
+    }
+  },
+  "marquee": [
+    "FTA-Registered",
+    "VAT Returns",
+    "Corporate Tax",
+    "Bookkeeping",
+    "Payroll & WPS",
+    "Audit Support",
+    "ESR & UBO",
+    "Advisory"
+  ],
+  "who": {
+    "tag": "Who it's for",
+    "title": "Built for ambitious operators",
+    "subtitle": "Founders create. We calculate.",
+    "cards": {
+      "freelancers": {
+        "title": "FREELANCERS",
+        "body": "Mainland or freezone — keep your books tidy, your VAT current, and your year-end painless."
+      },
+      "smes": {
+        "title": "SMEs",
+        "body": "Monthly bookkeeping, payroll, VAT and CT — one fixed fee, one accountable team."
+      },
+      "startups": {
+        "title": "STARTUPS",
+        "body": "Investor-ready financials, runway models, and clean cap tables from day one."
+      },
+      "groups": {
+        "title": "GROUPS & HOLDINGS",
+        "body": "Consolidated reporting, transfer pricing, ESR returns and audit-grade compliance."
+      }
+    }
+  },
+  "services": {
+    "tag": "Our services",
+    "title": "Everything the FTA can throw at you",
+    "subtitle": "You stay focused. We handle the rest.",
+    "lead": "Bookkeeping. VAT returns. Corporate Tax. Payroll & WPS. Audit support. Advisory. HZA knows what the regulator wants — and plans every move before it's made.",
+    "items": {
+      "bookkeeping": {
+        "title": "Bookkeeping",
+        "body": "Monthly clean books, bank recs, and reports you'll actually read."
+      },
+      "vat": {
+        "title": "VAT Returns",
+        "body": "FTA-compliant filings, input/output recovery, and no surprise penalties."
+      },
+      "ct": {
+        "title": "Corporate Tax",
+        "body": "9% CT planning, group relief, free zone qualifying income — done right."
+      },
+      "payroll": {
+        "title": "Payroll & WPS",
+        "body": "Salary processing, WPS files, end-of-service gratuity — every cycle."
+      },
+      "audit": {
+        "title": "Audit Support",
+        "body": "Year-end packages prepared so your auditor signs off without drama."
+      },
+      "advisory": {
+        "title": "Advisory",
+        "body": "Cashflow modelling, scenario planning, and the call you take before the move."
+      }
+    }
+  },
+  "why": {
+    "tag": "Why choose us",
+    "title": "Numbers aren't for you.",
+    "subtitle": "Bespoke accounting for UAE operators.",
+    "cta": "Meet the team",
+    "cards": {
+      "0": {
+        "title": "We Speak Business",
+        "body": "We've sat in your seat. We resolve real problems, not abstract debits."
+      },
+      "1": {
+        "title": "You Don't Panic",
+        "body": "We handle everything and you stay visible on your position — at all times."
+      },
+      "2": {
+        "title": "We Plan Ahead",
+        "body": "Moves are made early to keep taxes low and surprises off the table."
+      },
+      "3": {
+        "title": "We're Not Robots (Yet)",
+        "body": "Clear advice and genuine support from real accountants you can call."
+      }
+    }
+  },
+  "process": {
+    "tag": "How it works",
+    "title": "From chaos to clarity",
+    "steps": {
+      "0": {
+        "step": "Step 01",
+        "title": "Talk to us",
+        "subtitle": "Where are you at and what's keeping you up?",
+        "body": "We've heard it all and nothing shocks us. Together we'll figure out exactly what needs fixing — and the order to do it in."
+      },
+      "1": {
+        "step": "Step 02",
+        "title": "We build defences",
+        "subtitle": "Initial setup, immediate savings.",
+        "body": "We create systems the FTA can't penetrate. Bullet-proof record keeping, tax habits built, expenses optimised."
+      },
+      "2": {
+        "step": "Step 03",
+        "title": "We stay ahead",
+        "subtitle": "Quarterly check-ins, no nasty surprises.",
+        "body": "Monthly bookkeeping and quarterly VAT keep you compliant. We see issues coming and route around them."
+      },
+      "3": {
+        "step": "Step 04",
+        "title": "Your taxes, sorted",
+        "subtitle": "No unnecessary tax. No surprises. No panic.",
+        "body": "Returns filed accurately, tax minimised legally and paid on time. Job done while others scramble."
+      }
+    }
+  },
+  "pricing": {
+    "tag": "Plans & pricing",
+    "title": "Fixed fee. No surprises.",
+    "subtitle": "Three tiers. Stack add-ons. Upgrade any time.",
+    "lead": "Every plan is a monthly retainer in AED, billed on the 1st. VAT (5%) is added separately. Upgrade or add a service mid-quarter with no penalty — we re-bill on a pro-rata basis.",
+    "popular": "Most popular",
+    "month": "month",
+    "fitFor": "Fit for",
+    "choose": "Choose plan",
+    "compareTag": "Compare side-by-side",
+    "compareTitle": "What's included",
+    "monthlyFee": "Monthly fee",
+    "addonsTag": "Add-on services",
+    "addonsTitle": "Stack what you need",
+    "addonsLead": "Each add-on can be bolted onto any plan. We quote anything more bespoke in writing within 48 hours.",
+    "bundleNote": "Bundle 2+ for 10% off",
+    "code": "Code",
+    "service": "Service",
+    "cadence": "Cadence",
+    "fee": "Fee (AED)",
+    "ctaTitle": "Want the numbers on paper?",
+    "ctaLead": "Download the full HZA proposal — cover, plan breakdown, add-on table and terms — formatted for your signature.",
+    "bookCta": "Talk to us",
+    "downloadCta": "Download proposal (PDF)",
+    "downloadLoading": "Preparing PDF…",
+    "downloadReady": "Saved ✓",
+    "downloadError": "Try again"
+  },
+  "cta": {
+    "title": "Let's hit the target.",
+    "lead": "Book a 30-minute call. Walk away with a plan, whether you work with us or not.",
+    "button": "Book a discovery call",
+    "secondary": "View pricing"
+  },
+  "footer": {
+    "rights": "© 2026 HZA — Alhadf Alzaki Accounting & Bookkeeping L.L.C. All rights reserved.",
+    "tagline": "Aim higher. Pay smarter.",
+    "contact": "Contact",
+    "address": "Dubai, United Arab Emirates",
+    "social": "Follow"
+  }
+}
