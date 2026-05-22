@@ -76,7 +76,8 @@ export default function Pricing() {
     <section
       ref={root}
       id="pricing"
-      className="section-pad bg-cream relative overflow-hidden noise-overlay"
+      className="section-pad relative overflow-hidden noise-overlay"
+      style={{ background: 'var(--bg)' }}
     >
       {/* Soft brand orbs */}
       <div className="pointer-events-none absolute -top-32 -left-32 w-[420px] h-[420px] rounded-full bg-blue/10 blur-3xl" />

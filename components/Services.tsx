@@ -5,9 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
+if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
 type Item = { key: string; icon: JSX.Element };
 
@@ -40,11 +38,10 @@ const Icons = {
       <path d="M12 18h4M32 32h4" strokeLinecap="round" />
     </svg>
   ),
-  audit: (
+  reports: (
     <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.2">
-      <circle cx="20" cy="20" r="11" />
-      <path d="M28 28l12 12" strokeLinecap="round" />
-      <path d="M15 20l4 4 7-8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M10 38V18M18 38V10M26 38V22M34 38V14M42 38V6" strokeLinecap="round" />
+      <path d="M6 42h36" strokeLinecap="round" />
     </svg>
   ),
   advisory: (
@@ -60,7 +57,7 @@ const items: Item[] = [
   { key: 'vat', icon: Icons.vat },
   { key: 'ct', icon: Icons.ct },
   { key: 'payroll', icon: Icons.payroll },
-  { key: 'audit', icon: Icons.audit },
+  { key: 'reports', icon: Icons.reports },
   { key: 'advisory', icon: Icons.advisory },
 ];
 
@@ -74,7 +71,6 @@ export default function Services() {
     const ctx = gsap.context(() => {
       if (!track.current) return;
 
-      // pin horizontal scroll
       const totalWidth = track.current.scrollWidth;
       const viewportW = window.innerWidth;
       const distance = totalWidth - viewportW + 80;
@@ -97,7 +93,6 @@ export default function Services() {
         });
       }
 
-      // Reveal cards as they pass
       gsap.utils.toArray<HTMLElement>('[data-svc-card]').forEach((card) => {
         gsap.from(card, {
           y: 60,
@@ -120,15 +115,15 @@ export default function Services() {
     <section
       ref={root}
       id="services"
-      className="relative bg-navy text-cream overflow-hidden"
-      style={{ minHeight: '100vh' }}
+      className="relative overflow-hidden"
+      style={{ minHeight: '100vh', background: 'var(--navy)', color: 'var(--cream)' }}
     >
       <div className="absolute inset-0 noise-overlay" />
 
       <div className="relative h-screen flex flex-col">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 pt-24 md:pt-32 pb-10 w-full">
-          <div className="pill bg-cream text-navy inline-flex">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
+          <div className="pill inline-flex" style={{ background: 'var(--cream)', color: 'var(--navy)' }}>
+            <span className="w-1.5 h-1.5 rounded-full bg-gold" />
             {t('tag')}
           </div>
 
@@ -186,7 +181,6 @@ export default function Services() {
               </article>
             ))}
 
-            {/* End cap */}
             <div className="w-[320px] flex items-center justify-center text-cream/40 text-sm uppercase tracking-widest">
               End of services
             </div>

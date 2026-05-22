@@ -16,38 +16,26 @@ export default function WhoItsFor() {
 
   const cards = [
     { key: 'freelancers', bg: '#F4D580', color: '#0B2150', rotate: -14 },
-    { key: 'smes', bg: '#1A4F9E', color: '#FAF6EC', rotate: -5 },
-    { key: 'startups', bg: '#D4A017', color: '#0B2150', rotate: 5 },
-    { key: 'groups', bg: '#0B2150', color: '#FAF6EC', rotate: 14 },
+    { key: 'smes',        bg: '#1A4F9E', color: '#FAF6EC', rotate: -5 },
+    { key: 'startups',    bg: '#D4A017', color: '#0B2150', rotate: 5 },
+    { key: 'groups',      bg: '#0B2150', color: '#FAF6EC', rotate: 14 },
   ] as const;
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       const cardsEls = gsap.utils.toArray<HTMLElement>('[data-card]');
-      // Start state: cards stacked center, no rotation
       cardsEls.forEach((c) => {
-        gsap.set(c, {
-          rotate: 0,
-          y: 80,
-          x: 0,
-          scale: 0.92,
-          opacity: 0,
-        });
+        gsap.set(c, { rotate: 0, y: 80, x: 0, scale: 0.92, opacity: 0 });
       });
 
-      // Headline reveal
       gsap.from('[data-who-headline] > span', {
         yPercent: 110,
         duration: 1,
         stagger: 0.06,
         ease: 'expo.out',
-        scrollTrigger: {
-          trigger: root.current,
-          start: 'top 70%',
-        },
+        scrollTrigger: { trigger: root.current, start: 'top 70%' },
       });
 
-      // Fan out the cards as the section scrolls in
       ScrollTrigger.create({
         trigger: root.current,
         start: 'top 60%',
@@ -72,7 +60,6 @@ export default function WhoItsFor() {
         },
       });
 
-      // Tilt on hover
       cardsEls.forEach((c) => {
         c.addEventListener('mouseenter', () => {
           gsap.to(c, { y: '-=12', scale: 1.04, duration: 0.4, ease: 'power2.out' });
@@ -90,16 +77,21 @@ export default function WhoItsFor() {
     <section
       ref={root}
       id="who"
-      className="section-pad relative bg-cream noise-overlay overflow-hidden"
+      className="section-pad relative noise-overlay overflow-hidden"
+      style={{ background: 'var(--bg)' }}
     >
       <div className="max-w-[1440px] mx-auto px-6 md:px-10">
         <div className="text-center mb-12">
-          <div className="pill bg-navy text-cream inline-flex">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
+          <div className="pill inline-flex" style={{ background: 'var(--navy)', color: 'var(--cream)' }}>
+            <span className="w-1.5 h-1.5 rounded-full bg-gold" />
             {t('tag')}
           </div>
 
-          <h2 data-who-headline className="h-mega text-navy text-[clamp(48px,8vw,140px)] mt-6">
+          <h2
+            data-who-headline
+            className="h-mega mt-6 text-[clamp(48px,8vw,140px)]"
+            style={{ color: 'var(--fg)' }}
+          >
             {(t('title') as string).split(' ').map((w, i) => (
               <span key={i} className="inline-block split-line mr-[0.25em]">
                 <span>{w}</span>
@@ -107,12 +99,14 @@ export default function WhoItsFor() {
             ))}
           </h2>
 
-          <p className="mt-4 text-navy/70 text-sm md:text-base font-semibold tracking-widest uppercase">
+          <p
+            className="mt-4 text-sm md:text-base font-semibold tracking-widest uppercase"
+            style={{ color: 'var(--fg-soft)' }}
+          >
             {t('subtitle')}
           </p>
         </div>
 
-        {/* Cards stage */}
         <div className="relative h-[520px] md:h-[600px] flex items-center justify-center">
           {cards.map((c, i) => (
             <article

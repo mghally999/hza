@@ -4,8 +4,11 @@ import Hero from '@/components/Hero';
 import Marquee from '@/components/Marquee';
 import WhoItsFor from '@/components/WhoItsFor';
 import Services from '@/components/Services';
+import Founder from '@/components/Founder';
 import WhyUs from '@/components/WhyUs';
 import Process from '@/components/Process';
+import Gallery from '@/components/Gallery';
+import VideoShowcase from '@/components/VideoShowcase';
 import Pricing from '@/components/Pricing';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
@@ -25,6 +28,9 @@ export default async function Home({
       <Marquee />
       <WhoItsFor />
       <Services />
+      <Founder />
+      <VideoShowcase />
+      <Gallery />
       <WhyUs />
       <Process />
       <Pricing />
