@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
@@ -11,6 +11,8 @@ if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 export default function Founder() {
   const t = useTranslations('founders');
   const tContact = useTranslations('contact');
+  const locale = useLocale();
+  const profileHref = locale === 'ar' ? '/docs/hza-profile-ar.pdf' : '/docs/hza-profile-en.pdf';
   const root = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -183,6 +185,20 @@ export default function Founder() {
               <a href="#cta" className="btn-magnetic btn-outline">
                 {tContact('phone')}
                 <span aria-hidden>→</span>
+              </a>
+              <a
+                href={profileHref}
+                target="_blank"
+                rel="noopener"
+                download
+                className="btn-magnetic btn-outline"
+              >
+                {t('profileCta')}
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M12 3v12" />
+                  <path d="m7 10 5 5 5-5" />
+                  <path d="M5 21h14" />
+                </svg>
               </a>
             </div>
           </div>
