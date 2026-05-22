@@ -1,29 +1,39 @@
 {
   "brand": {
     "name": "HZA",
-    "fullName": "Alhadf Alzaki",
-    "tagline": "Accounting & Bookkeeping L.L.C."
+    "fullName": "ALHADF ALZAKI",
+    "tagline": "Accounting & Bookkeeping L.L.C.",
+    "promise": "Accurate Finances. Better Decisions. Sustainable Growth."
   },
   "nav": {
     "services": "Services",
-    "company": "Company",
-    "resources": "Resources",
+    "founders": "Founders",
+    "process": "Process",
     "pricing": "Pricing",
+    "contact": "Contact",
+    "ask": "Ask AI",
     "talk": "Talk to us",
-    "lang": "ع"
+    "lang": "العربية"
   },
   "hero": {
-    "tag": "Accounting & Tax for Smart Businesses",
+    "tag": "Dubai's most precise accounting practice",
     "title1": "AIM HIGHER.",
     "title2": "PAY SMARTER.",
-    "subtitle": "She hits the target every time.",
-    "lead": "UAE-based accountants for founders, SMEs, and groups that would rather build than balance books. Compliant, precise, and genuinely on your side.",
+    "subtitle": "We hit the target every time.",
+    "lead": "Mainland-licensed accountants for UAE founders, SMEs and groups. VAT, Corporate Tax, payroll & books — handled with the discipline of a Big Four and the warmth of a partner who answers his own phone.",
     "ctaPrimary": "Talk to us",
     "ctaSecondary": "View pricing",
+    "askAi": "Ask anything — tax, law, books",
     "checks": {
-      "0": "VAT & CT Compliant",
+      "0": "FTA-Registered · License 1320675",
       "1": "Bilingual EN / AR",
-      "2": "Fixed-fee plans"
+      "2": "From AED 1,500 / month"
+    },
+    "stats": {
+      "0": ["12+", "Years in UAE finance"],
+      "1": ["300+", "Returns filed yearly"],
+      "2": ["0", "FTA penalties last year"],
+      "3": ["24h", "Response SLA"]
     }
   },
   "marquee": [
@@ -33,8 +43,9 @@
     "Bookkeeping",
     "Payroll & WPS",
     "Audit Support",
-    "ESR & UBO",
-    "Advisory"
+    "Bank Reconciliation",
+    "Advisory",
+    "License 1320675"
   ],
   "who": {
     "tag": "Who it's for",
@@ -43,18 +54,18 @@
     "cards": {
       "freelancers": {
         "title": "FREELANCERS",
-        "body": "Mainland or freezone — keep your books tidy, your VAT current, and your year-end painless."
+        "body": "Mainland or freezone — clean books, current VAT, painless year-end."
       },
       "smes": {
         "title": "SMEs",
-        "body": "Monthly bookkeeping, payroll, VAT and CT — one fixed fee, one accountable team."
+        "body": "Monthly books, payroll, VAT and CT — one fixed fee, one accountable team."
       },
       "startups": {
         "title": "STARTUPS",
-        "body": "Investor-ready financials, runway models, and clean cap tables from day one."
+        "body": "Investor-ready financials, runway models and clean cap tables from day one."
       },
       "groups": {
-        "title": "GROUPS & HOLDINGS",
+        "title": "GROUPS",
         "body": "Consolidated reporting, transfer pricing, ESR returns and audit-grade compliance."
       }
     }
@@ -67,35 +78,62 @@
     "items": {
       "bookkeeping": {
         "title": "Bookkeeping",
-        "body": "Monthly clean books, bank recs, and reports you'll actually read."
+        "body": "Monthly clean books, bank reconciliations and management reports you'll actually read."
       },
       "vat": {
-        "title": "VAT Returns",
-        "body": "FTA-compliant filings, input/output recovery, and no surprise penalties."
+        "title": "VAT Services",
+        "body": "FTA-compliant filings, proper registration, compliant invoices, input/output recovery."
       },
       "ct": {
         "title": "Corporate Tax",
-        "body": "9% CT planning, group relief, free zone qualifying income — done right."
+        "body": "9% CT planning, group relief, free-zone qualifying income — prepared and filed right."
       },
       "payroll": {
         "title": "Payroll & WPS",
-        "body": "Salary processing, WPS files, end-of-service gratuity — every cycle."
+        "body": "Salary processing, WPS files, end-of-service gratuity accruals — every cycle."
       },
-      "audit": {
-        "title": "Audit Support",
-        "body": "Year-end packages prepared so your auditor signs off without drama."
+      "reports": {
+        "title": "Financial Reporting",
+        "body": "P&L, balance sheet, cashflow statement, costing & profitability analysis."
       },
       "advisory": {
         "title": "Advisory",
-        "body": "Cashflow modelling, scenario planning, and the call you take before the move."
+        "body": "Cashflow modelling, scenario planning, and the call you make before the move."
+      }
+    }
+  },
+  "founders": {
+    "tag": "Meet the founders",
+    "title": "TWO PARTNERS. ONE STANDARD.",
+    "subtitle": "Numbers, law, and the discipline to do both right.",
+    "bayomy": {
+      "name": "Mohammed Bayomy",
+      "role": "Founder · CEO",
+      "credential": "Chartered Accountant · 12+ years UAE",
+      "bio": "Mohammed founded HZA to bring institutional-grade accounting to UAE founders. He's filed hundreds of VAT and Corporate Tax returns, set up WPS for dozens of SMEs, and personally answers every client onboarding call. Bilingual EN/AR.",
+      "quote": "Books that tie. Returns that file. Partners who answer.",
+      "stats": {
+        "0": ["300+", "Returns filed"],
+        "1": ["12y", "UAE experience"]
+      }
+    },
+    "ghaly": {
+      "name": "Counselor Mohab Ghaly",
+      "role": "Co-Founder · CEO & Legal Advisor",
+      "credential": "Licensed Legal Counsel · UAE Commercial Law",
+      "bio": "Mohab handles the legal architecture: trade licensing, MoA drafting, shareholder structuring, compliance with Federal Tax Authority procedures, and dispute representation. He ensures every accounting strategy is bullet-proof in law.",
+      "quote": "Compliance isn't optional. Neither is doing it elegantly.",
+      "stats": {
+        "0": ["15y", "Legal practice"],
+        "1": ["UAE", "Bar admitted"]
       }
     }
   },
   "why": {
-    "tag": "Why choose us",
+    "tag": "Why HZA",
     "title": "Numbers aren't for you.",
-    "subtitle": "Bespoke accounting for UAE operators.",
-    "cta": "Meet the team",
+    "subtitle": "Bespoke accounting & legal for UAE operators.",
+    "cta": "Meet the founders",
     "cards": {
       "0": {
         "title": "We Speak Business",
@@ -103,21 +141,21 @@
       },
       "1": {
         "title": "You Don't Panic",
-        "body": "We handle everything and you stay visible on your position — at all times."
+        "body": "We handle everything. You see your position clearly — at all times."
       },
       "2": {
         "title": "We Plan Ahead",
         "body": "Moves are made early to keep taxes low and surprises off the table."
       },
       "3": {
-        "title": "We're Not Robots (Yet)",
+        "title": "We're Not Robots",
         "body": "Clear advice and genuine support from real accountants you can call."
       }
     }
   },
   "process": {
     "tag": "How it works",
-    "title": "From chaos to clarity",
+    "title": "FROM CHAOS TO CLARITY",
     "steps": {
       "0": {
         "step": "Step 01",
@@ -129,7 +167,7 @@
         "step": "Step 02",
         "title": "We build defences",
         "subtitle": "Initial setup, immediate savings.",
-        "body": "We create systems the FTA can't penetrate. Bullet-proof record keeping, tax habits built, expenses optimised."
+        "body": "Systems the FTA can't penetrate. Bullet-proof record keeping, tax habits built, expenses optimised."
       },
       "2": {
         "step": "Step 03",
@@ -147,19 +185,20 @@
   },
   "pricing": {
     "tag": "Plans & pricing",
-    "title": "Fixed fee. No surprises.",
+    "title": "FIXED FEE. NO SURPRISES.",
     "subtitle": "Three tiers. Stack add-ons. Upgrade any time.",
-    "lead": "Every plan is a monthly retainer in AED, billed on the 1st. VAT (5%) is added separately. Upgrade or add a service mid-quarter with no penalty — we re-bill on a pro-rata basis.",
+    "lead": "Every plan is a monthly retainer in AED, billed on the 1st. VAT (5%) added separately. Upgrade or add a service mid-quarter with no penalty — we re-bill pro-rata.",
     "popular": "Most popular",
     "month": "month",
     "fitFor": "Fit for",
     "choose": "Choose plan",
     "compareTag": "Compare side-by-side",
-    "compareTitle": "What's included",
+    "compareTitle": "WHAT'S INCLUDED",
     "monthlyFee": "Monthly fee",
+    "deliverable": "Deliverable",
     "addonsTag": "Add-on services",
-    "addonsTitle": "Stack what you need",
-    "addonsLead": "Each add-on can be bolted onto any plan. We quote anything more bespoke in writing within 48 hours.",
+    "addonsTitle": "STACK WHAT YOU NEED",
+    "addonsLead": "Bolt any add-on onto any plan. Bespoke scopes quoted in writing within 48 hours.",
     "bundleNote": "Bundle 2+ for 10% off",
     "code": "Code",
     "service": "Service",
@@ -173,17 +212,63 @@
     "downloadReady": "Saved ✓",
     "downloadError": "Try again"
   },
+  "video": {
+    "tag": "In motion",
+    "title": "THE WORK BEHIND THE NUMBERS",
+    "subtitle": "Suits. Spreadsheets. Quiet diligence.",
+    "lead": "Boardrooms, ledgers and the small daily acts of discipline that turn a messy quarter into an audit-ready one. Filmed by the world's best — chosen by us to fit Mohammed's standard.",
+    "empty": "Video unavailable right now."
+  },
+  "gallery": {
+    "tag": "Where we work",
+    "title": "ROOTED IN DUBAI",
+    "subtitle": "Mainland office in Muhaisnah 4 · serving the entire UAE.",
+    "lead": "From DIFC consultancies to Jebel Ali traders, from Sharjah free-zones to Abu Dhabi groups — we know how the Federal Tax Authority handles each. The skyline changes; the books still need to tie.",
+    "loading": "Loading scenery…"
+  },
+  "chat": {
+    "title": "Ask anything",
+    "subtitle": "Tax · Law · Accounting · UAE",
+    "placeholder": "Ask about VAT, Corporate Tax, licensing…",
+    "send": "Send",
+    "thinking": "Thinking…",
+    "greeting": "Hi — I'm HZA's AI assistant, powered by Claude. Ask me anything about UAE accounting, VAT, Corporate Tax, free-zone licensing or legal compliance. I'll give you a straight answer.",
+    "examples": {
+      "0": "When is my VAT return due?",
+      "1": "Does free-zone income qualify for 0% CT?",
+      "2": "What's the WPS deadline this month?"
+    },
+    "disclaimer": "AI responses are guidance, not formal advice. For specific filings, book a call.",
+    "error": "Couldn't reach the AI. Try again in a moment.",
+    "open": "Ask HZA AI",
+    "close": "Close chat"
+  },
   "cta": {
-    "title": "Let's hit the target.",
-    "lead": "Book a 30-minute call. Walk away with a plan, whether you work with us or not.",
+    "title": "LET'S HIT THE TARGET.",
+    "lead": "Book a 30-minute call. Walk away with a plan — whether you work with us or not.",
     "button": "Book a discovery call",
-    "secondary": "View pricing"
+    "secondary": "View pricing",
+    "whatsapp": "WhatsApp"
+  },
+  "contact": {
+    "tag": "Contact",
+    "address": "Muhaisnah 4, Dubai, United Arab Emirates",
+    "phone": "+971 50 198 0275",
+    "phoneAlt": "+971 52 448 8302",
+    "email": "mohamedbayomy1998@gmail.com",
+    "license": "Trade License: 1320675",
+    "hours": "Always open"
   },
   "footer": {
     "rights": "© 2026 HZA — Alhadf Alzaki Accounting & Bookkeeping L.L.C. All rights reserved.",
-    "tagline": "Aim higher. Pay smarter.",
+    "tagline": "Accurate Finances. Better Decisions. Sustainable Growth.",
     "contact": "Contact",
-    "address": "Dubai, United Arab Emirates",
-    "social": "Follow"
+    "address": "Muhaisnah 4, Dubai, United Arab Emirates",
+    "social": "Follow",
+    "credits": "Crafted in Dubai"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
   }
 }

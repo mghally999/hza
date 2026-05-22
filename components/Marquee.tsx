@@ -8,12 +8,12 @@ export default function Marquee() {
   const doubled = [...items, ...items, ...items];
 
   return (
-    <section className="relative py-8 bg-navy text-cream overflow-hidden border-y border-navy/60">
+    <section
+      className="relative py-8 overflow-hidden border-y"
+      style={{ background: 'var(--navy)', color: 'var(--cream)', borderColor: 'rgba(7,22,56,0.6)' }}
+    >
       <div className="flex">
-        <div
-          className="flex shrink-0 gap-12 items-center pr-12 animate-marquee"
-          style={{ animation: 'marquee 28s linear infinite' }}
-        >
+        <div className="marquee-track flex shrink-0 gap-12 items-center pr-12">
           {doubled.map((item, i) => (
             <div key={i} className="flex items-center gap-12 whitespace-nowrap">
               <span className="text-2xl md:text-3xl font-display font-extrabold uppercase tracking-tight">
@@ -26,20 +26,6 @@ export default function Marquee() {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-33.333%);
-          }
-        }
-        :global(html[dir='rtl']) .animate-marquee {
-          animation-direction: reverse !important;
-        }
-      `}</style>
     </section>
   );
 }

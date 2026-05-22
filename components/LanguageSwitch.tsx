@@ -13,8 +13,10 @@ export default function LanguageSwitch() {
 
   return (
     <button
+      type="button"
       onClick={() => router.replace(pathname, { locale: switchTo })}
-      className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-navy/20 hover:border-navy/60 hover:bg-navy hover:text-cream transition-all text-sm font-bold"
+      className="inline-flex items-center justify-center h-9 px-3 rounded-full border transition-all text-[11px] font-bold tracking-[0.16em] uppercase hover:bg-gold hover:text-navy hover:border-gold"
+      style={{ borderColor: 'var(--border)', color: 'var(--fg)' }}
       aria-label={`Switch language to ${switchTo}`}
     >
       {t('lang')}

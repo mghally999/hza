@@ -1,6 +1,9 @@
 /**
- * Single source of truth for pricing — used by both the on-page Pricing
- * section and the downloadable PDF proposal.
+ * Single source of truth for HZA pricing — used by both the on-page
+ * Pricing section and the downloadable PDF proposal.
+ *
+ * Starter is set at AED 1,500/month to match the part-time accounting
+ * package quoted in the HZA Facebook brochures.
  */
 
 export type PlanKey = 'starter' | 'growth' | 'group';
@@ -21,9 +24,9 @@ export const PLANS: Plan[] = [
     key: 'starter',
     name: 'Starter',
     tagline: 'Freelancers · early SMEs',
-    price: 1490,
+    price: 1500,
     summary:
-      'Monthly bookkeeping with quarterly VAT filing — the cleanest possible foundation.',
+      'Part-time accounting support — monthly bookkeeping, bank reconciliation and a tidy year-end.',
     fitFor: 'Up to 50 transactions / month, single bank account, single trade license.',
     bullets: [
       'Monthly bookkeeping (up to 50 transactions)',
@@ -38,10 +41,10 @@ export const PLANS: Plan[] = [
     key: 'growth',
     name: 'Growth',
     tagline: 'Operating SMEs · scaling teams',
-    price: 3490,
+    price: 3500,
     featured: true,
     summary:
-      'Everything in Starter plus payroll, WPS, multi-bank books and a dedicated lead.',
+      'Everything in Starter plus payroll, WPS, multi-bank books and a dedicated account lead.',
     fitFor: 'Up to 250 transactions / month, multi-bank, employees on WPS.',
     bullets: [
       'Bookkeeping up to 250 transactions',
@@ -58,7 +61,7 @@ export const PLANS: Plan[] = [
     key: 'group',
     name: 'Group',
     tagline: 'Holdings · multi-entity',
-    price: 7490,
+    price: 7500,
     summary:
       'Consolidated reporting, transfer pricing memos and audit-grade compliance across entities.',
     fitFor: 'Multiple entities, free-zone + mainland mix, audit obligation.',
@@ -75,7 +78,6 @@ export const PLANS: Plan[] = [
   },
 ];
 
-// Comparison matrix — referenced by both the PDF and the on-page comparison.
 export type Deliverable = {
   label: string;
   includedIn: (p: Plan) => boolean;

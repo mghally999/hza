@@ -20,7 +20,6 @@ export default function WhyUs() {
         ease: 'expo.out',
         scrollTrigger: { trigger: root.current, start: 'top 70%' },
       });
-
       gsap.from('[data-why-card]', {
         y: 60,
         opacity: 0,
@@ -35,15 +34,24 @@ export default function WhyUs() {
   }, []);
 
   return (
-    <section ref={root} id="why" className="section-pad bg-cream-100 relative overflow-hidden">
+    <section
+      ref={root}
+      id="why"
+      className="section-pad relative overflow-hidden"
+      style={{ background: 'var(--bg-soft)' }}
+    >
       <div className="max-w-[1440px] mx-auto px-6 md:px-10">
         <div className="text-center mb-16">
-          <div className="pill bg-navy text-cream inline-flex">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
+          <div className="pill inline-flex" style={{ background: 'var(--navy)', color: 'var(--cream)' }}>
+            <span className="w-1.5 h-1.5 rounded-full bg-gold" />
             {t('tag')}
           </div>
 
-          <h2 data-why-headline className="h-mega text-navy text-[clamp(48px,8vw,140px)] mt-6">
+          <h2
+            data-why-headline
+            className="h-mega mt-6 text-[clamp(48px,8vw,140px)]"
+            style={{ color: 'var(--fg)' }}
+          >
             {(t('title') as string).split(' ').map((w, i) => (
               <span key={i} className="inline-block split-line mr-[0.25em]">
                 <span>{w}</span>
@@ -51,11 +59,14 @@ export default function WhyUs() {
             ))}
           </h2>
 
-          <p className="mt-4 text-navy/70 text-sm md:text-base font-semibold tracking-widest uppercase">
+          <p
+            className="mt-4 text-sm md:text-base font-semibold tracking-widest uppercase"
+            style={{ color: 'var(--fg-soft)' }}
+          >
             {t('subtitle')}
           </p>
 
-          <a href="#cta" className="btn-magnetic btn-outline mt-8 inline-flex">
+          <a href="#founders" className="btn-magnetic btn-outline mt-8 inline-flex">
             {t('cta')}
             <span aria-hidden>→</span>
           </a>
@@ -66,23 +77,33 @@ export default function WhyUs() {
             <article
               key={i}
               data-why-card
-              className="p-7 md:p-8 rounded-3xl bg-cream border-2 border-navy/15 hover:border-gold transition-colors group"
+              className="p-7 md:p-8 rounded-3xl border-2 transition-colors group lift"
+              style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}
             >
               <div className="flex items-center justify-between mb-8">
-                <div className="w-12 h-12 rounded-2xl bg-navy text-gold grid place-items-center group-hover:bg-gold group-hover:text-navy transition-colors">
+                <div
+                  className="w-12 h-12 rounded-2xl grid place-items-center transition-colors"
+                  style={{ background: 'var(--navy)', color: 'var(--gold)' }}
+                >
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
                     <path d="M8 12.5l3 3 5-6" strokeLinecap="round" strokeLinejoin="round" />
                     <circle cx="12" cy="12" r="10" />
                   </svg>
                 </div>
-                <span className="font-mono text-xs text-navy/40 tracking-widest">
+                <span
+                  className="font-mono text-xs tracking-widest"
+                  style={{ color: 'var(--fg-soft)' }}
+                >
                   0{i + 1}
                 </span>
               </div>
-              <h3 className="font-display font-black text-2xl uppercase leading-[0.95] tracking-tight mb-4 text-navy">
+              <h3
+                className="font-display font-black text-2xl uppercase leading-[0.95] tracking-tight mb-4"
+                style={{ color: 'var(--fg)' }}
+              >
                 {t(`cards.${i}.title` as any)}
               </h3>
-              <p className="text-navy/70 text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--fg-soft)' }}>
                 {t(`cards.${i}.body` as any)}
               </p>
             </article>
