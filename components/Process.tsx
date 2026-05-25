@@ -108,13 +108,13 @@ export default function Process() {
 
   return (
     <section ref={root} id="process" className="relative">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-10 pt-24 pb-12 bg-cream">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10 pt-20 sm:pt-24 pb-12 bg-cream">
         <div className="text-center">
           <div className="pill bg-navy text-cream inline-flex">
             <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
             {t('tag')}
           </div>
-          <h2 className="h-mega text-navy text-[clamp(48px,8vw,140px)] mt-6">
+          <h2 className="h-mega text-navy text-[clamp(40px,8vw,140px)] mt-6">
             {t('title')}
           </h2>
         </div>
@@ -127,7 +127,7 @@ export default function Process() {
           style={{ background: stepBgs[i], color: stepFgs[i] }}
           className="section-pad relative noise-overlay"
         >
-          <div className="max-w-[1440px] mx-auto px-6 md:px-10 grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+          <div className="max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10 grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
               <span data-step-text className="pill bg-current text-current inline-flex" style={{
                 background: stepFgs[i] + '15',
@@ -137,12 +137,12 @@ export default function Process() {
               </span>
               <h3
                 data-step-text
-                className="h-mega text-[clamp(40px,6.5vw,110px)] mt-6"
+                className="h-mega text-[clamp(36px,6.5vw,110px)] mt-6"
                 style={{ color: stepFgs[i] }}
               >
                 {t(`steps.${i}.title` as any)}
               </h3>
-              <p data-step-text className="font-display text-xl md:text-2xl mt-4 uppercase tracking-tight opacity-80">
+              <p data-step-text className="font-display text-lg sm:text-xl md:text-2xl mt-4 uppercase tracking-tight opacity-80">
                 {t(`steps.${i}.subtitle` as any)}
               </p>
               <p data-step-text className="mt-8 max-w-md text-[15px] leading-relaxed opacity-75">

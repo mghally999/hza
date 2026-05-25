@@ -40,7 +40,7 @@ export default function WhyUs() {
       className="section-pad relative overflow-hidden"
       style={{ background: 'var(--bg-soft)' }}
     >
-      <div className="max-w-[1440px] mx-auto px-6 md:px-10">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10">
         <div className="text-center mb-16">
           <div className="pill inline-flex" style={{ background: 'var(--navy)', color: 'var(--cream)' }}>
             <span className="w-1.5 h-1.5 rounded-full bg-gold" />
@@ -49,11 +49,11 @@ export default function WhyUs() {
 
           <h2
             data-why-headline
-            className="h-mega mt-6 text-[clamp(48px,8vw,140px)]"
+            className="h-mega mt-6 text-[clamp(40px,8vw,140px)]"
             style={{ color: 'var(--fg)' }}
           >
             {(t('title') as string).split(' ').map((w, i) => (
-              <span key={i} className="inline-block split-line mr-[0.25em]">
+              <span key={i} className="inline-block split-line me-[0.25em]">
                 <span>{w}</span>
               </span>
             ))}
@@ -72,7 +72,7 @@ export default function WhyUs() {
           </a>
         </div>
 
-        <div data-why-cards className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div data-why-cards className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[0, 1, 2, 3].map((i) => (
             <article
               key={i}

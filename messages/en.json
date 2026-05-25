@@ -233,7 +233,7 @@
     "placeholder": "Ask about VAT, Corporate Tax, licensing…",
     "send": "Send",
     "thinking": "Thinking…",
-    "greeting": "Hi — I'm HZA's AI assistant, powered by Claude. Ask me anything about UAE accounting, VAT, Corporate Tax, free-zone licensing or legal compliance. I'll give you a straight answer.",
+    "greeting": "Hi — I'm HZA's onboard assistant. Ask me anything about UAE accounting, VAT, Corporate Tax, WPS payroll, free-zone licensing or FTA procedures. I'll give you a straight answer.",
     "examples": {
       "0": "When is my VAT return due?",
       "1": "Does free-zone income qualify for 0% CT?",

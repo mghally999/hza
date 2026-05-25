@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.32.1",
     "clsx": "^2.1.1",
     "gsap": "^3.12.5",
     "lenis": "^1.1.13",

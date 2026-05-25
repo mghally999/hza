@@ -91,7 +91,7 @@ export default function Gallery() {
       className="section-pad relative overflow-hidden noise-overlay"
       style={{ background: 'var(--bg-soft)' }}
     >
-      <div className="max-w-[1440px] mx-auto px-6 md:px-10">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10">
         <div className="grid lg:grid-cols-12 gap-8 items-end mb-10">
           <div className="lg:col-span-7">
             <div className="pill inline-flex" style={{ background: 'var(--navy)', color: 'var(--cream)' }}>
@@ -99,7 +99,7 @@ export default function Gallery() {
               {t('tag')}
             </div>
             <h2
-              className="h-mega mt-5 text-[clamp(48px,8vw,130px)]"
+              className="h-mega mt-5 text-[clamp(40px,8vw,130px)]"
               style={{ color: 'var(--fg)' }}
             >
               {t('title')}

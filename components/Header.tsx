@@ -30,9 +30,9 @@ export default function Header() {
           : {}
       }
     >
-      <div className="max-w-[1440px] mx-auto px-5 md:px-10 h-[76px] flex items-center justify-between gap-6">
-        <Link href="/" aria-label="HZA Home" className="inline-flex items-center gap-3">
-          <Logo size={52} />
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-5 md:px-10 h-[68px] sm:h-[76px] flex items-center justify-between gap-3 sm:gap-6">
+        <Link href="/" aria-label="HZA Home" className="inline-flex items-center gap-2 sm:gap-3 min-w-0">
+          <Logo size={48} />
           <span className="hidden sm:flex flex-col leading-none">
             <span
               className="text-[15px] font-extrabold tracking-[0.22em] uppercase"

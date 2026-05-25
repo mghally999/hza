@@ -77,10 +77,15 @@ html.lenis, html.lenis body { height: auto; }
 html[dir="rtl"] { font-family: var(--font-arabic), system-ui, sans-serif; }
 html[dir="rtl"] .reverse-on-rtl { flex-direction: row-reverse; }
 
+/* Better tap targets and prevent iOS auto-zoom on inputs */
+@media (max-width: 640px) {
+  input, textarea, select { font-size: 16px; }
+}
+
 /* ──────────────────────────────────────────────────────────
    Composition utilities
    ────────────────────────────────────────────────────────── */
-.section-pad { padding-block: clamp(80px, 10vw, 160px); }
+.section-pad { padding-block: clamp(64px, 10vw, 160px); }
 
 .h-mega {
   font-family: var(--font-display);
@@ -116,12 +121,15 @@ html[dir="rtl"] .h-mega {
    ────────────────────────────────────────────────────────── */
 .btn-magnetic {
   position: relative; display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 28px; border-radius: 999px;
+  padding: 14px 22px; border-radius: 999px;
   font-family: var(--font-body);
-  font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+  font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em;
   cursor: pointer;
   transition: transform 0.4s var(--easing), background 0.3s var(--easing), color 0.3s var(--easing);
   white-space: nowrap;
+}
+@media (min-width: 640px) {
+  .btn-magnetic { padding: 16px 28px; font-size: 14px; }
 }
 
 .btn-primary { background: var(--navy); color: var(--cream); }
@@ -181,12 +189,15 @@ html[dir="rtl"] .h-mega {
 .gold-frame::after {
   content: '';
   position: absolute;
-  width: 56px; height: 56px;
+  width: 40px; height: 40px;
   border: 2px solid var(--gold);
   pointer-events: none;
 }
-.gold-frame::before { top: -10px; left: -10px; border-right: 0; border-bottom: 0; }
-.gold-frame::after  { bottom: -10px; right: -10px; border-left: 0; border-top: 0; }
+.gold-frame::before { top: -10px; inset-inline-start: -10px; border-inline-end: 0; border-bottom: 0; }
+.gold-frame::after  { bottom: -10px; inset-inline-end: -10px; border-inline-start: 0; border-top: 0; }
+@media (min-width: 640px) {
+  .gold-frame::before, .gold-frame::after { width: 56px; height: 56px; }
+}
 
 /* Magnetic hover for cards */
 .lift {

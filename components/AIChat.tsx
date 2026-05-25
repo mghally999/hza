@@ -90,7 +90,7 @@ export default function AIChat() {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? t('close') : t('open')}
-        className="fixed z-[60] bottom-6 right-6 rtl:right-auto rtl:left-6 inline-flex items-center gap-2 rounded-full px-5 py-3.5 font-semibold text-[13px] glow-ring"
+        className="fixed z-[60] bottom-4 sm:bottom-6 end-4 sm:end-6 inline-flex items-center gap-2 rounded-full px-4 sm:px-5 py-3 sm:py-3.5 font-semibold text-[12px] sm:text-[13px] glow-ring"
         style={{
           background: 'var(--navy)',
           color: 'var(--cream)',
@@ -109,7 +109,7 @@ export default function AIChat() {
 
       {/* Panel */}
       <div
-        className={`fixed z-[59] bottom-24 right-6 rtl:right-auto rtl:left-6 w-[calc(100vw-3rem)] max-w-[420px] h-[600px] max-h-[calc(100vh-8rem)] rounded-3xl flex flex-col transition-all duration-500 chat-bubble glass ${
+        className={`fixed z-[59] bottom-20 sm:bottom-24 end-4 sm:end-6 w-[calc(100vw-2rem)] sm:w-[calc(100vw-3rem)] max-w-[420px] h-[min(600px,calc(100svh-7rem))] rounded-3xl flex flex-col transition-all duration-500 chat-bubble glass ${
           open ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-6 pointer-events-none'
         }`}
         style={{ background: 'color-mix(in srgb, var(--surface) 92%, transparent)' }}
@@ -157,8 +157,8 @@ export default function AIChat() {
               key={i}
               className={`max-w-[85%] rounded-2xl px-3.5 py-2.5 text-[13.5px] leading-relaxed whitespace-pre-wrap ${
                 m.role === 'user'
-                  ? 'ml-auto rtl:ml-0 rtl:mr-auto bg-navy text-cream'
-                  : 'mr-auto rtl:mr-0 rtl:ml-auto bg-cream-warm text-ink border border-navy/10'
+                  ? 'ms-auto bg-navy text-cream'
+                  : 'me-auto bg-cream-warm text-ink border border-navy/10'
               }`}
               style={
                 m.role === 'user'

@@ -82,14 +82,14 @@ export default function VideoShowcase() {
       className="section-pad relative overflow-hidden noise-overlay"
       style={{ background: 'var(--navy)', color: 'var(--cream)' }}
     >
-      <div className="max-w-[1440px] mx-auto px-6 md:px-10">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10">
         <div className="grid lg:grid-cols-12 gap-8 items-end mb-10">
           <div className="lg:col-span-7">
             <div className="pill inline-flex" style={{ background: '#FAF6EC', color: '#0B2150' }}>
               <span className="w-1.5 h-1.5 rounded-full bg-gold" />
               {t('tag')}
             </div>
-            <h2 className="h-mega mt-5 text-cream text-[clamp(42px,7vw,110px)]">
+            <h2 className="h-mega mt-5 text-cream text-[clamp(36px,7vw,110px)]">
               {t('title')}
             </h2>
           </div>

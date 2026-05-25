@@ -59,10 +59,10 @@ export default function CTA() {
         className="absolute -left-40 top-1/4 w-[500px] h-[500px] rounded-full border-[30px] border-blue/20 pointer-events-none"
       />
 
-      <div className="relative max-w-[1440px] mx-auto px-6 md:px-10 text-center">
-        <h2 className="h-mega text-cream text-[clamp(56px,11vw,200px)]">
+      <div className="relative max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10 text-center">
+        <h2 className="h-mega text-cream text-[clamp(44px,11vw,200px)]">
           {(t('title') as string).split(' ').map((w, i) => (
-            <span key={i} data-cta-line className="inline-block split-line mr-[0.25em]">
+            <span key={i} data-cta-line className="inline-block split-line me-[0.25em]">
               <span>{w}</span>
             </span>
           ))}
@@ -96,7 +96,7 @@ export default function CTA() {
             { label: 'Phone', value: c('phone') },
             { label: 'Email', value: c('email') },
           ].map((item) => (
-            <div key={item.label} className="rounded-2xl border border-cream/15 px-4 py-4 text-left rtl:text-right">
+            <div key={item.label} className="rounded-2xl border border-cream/15 px-4 py-4 text-start">
               <div className="text-[10px] tracking-[0.22em] uppercase font-bold text-gold">{item.label}</div>
               <div className="text-[13px] mt-1 break-words">{item.value}</div>
             </div>

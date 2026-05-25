@@ -8,9 +8,9 @@ export default function Footer() {
   const c = useTranslations('contact');
   return (
     <footer className="py-16" style={{ background: 'var(--navy-deep)', color: 'rgba(250,246,236,0.8)' }}>
-      <div className="max-w-[1440px] mx-auto px-6 md:px-10">
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
-          <div className="md:col-span-2">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-12">
+          <div className="sm:col-span-2">
             <Logo size={84} onDark />
             <p className="mt-6 text-sm max-w-md" style={{ color: 'rgba(250,246,236,0.6)' }}>
               {t('tagline')}

@@ -83,7 +83,7 @@ export default function Pricing() {
       <div className="pointer-events-none absolute -top-32 -left-32 w-[420px] h-[420px] rounded-full bg-blue/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 w-[520px] h-[520px] rounded-full bg-gold/10 blur-3xl" />
 
-      <div className="relative max-w-[1440px] mx-auto px-6 md:px-10">
+      <div className="relative max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10">
         <div className="text-center mb-14">
           <div className="pill bg-navy text-cream inline-flex">
             <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
@@ -92,10 +92,10 @@ export default function Pricing() {
 
           <h2
             data-pricing-head
-            className="h-mega text-navy text-[clamp(48px,8vw,140px)] mt-6"
+            className="h-mega text-navy text-[clamp(40px,8vw,140px)] mt-6"
           >
             {(t('title') as string).split(' ').map((w, i) => (
-              <span key={i} className="inline-block split-line mr-[0.25em]">
+              <span key={i} className="inline-block split-line me-[0.25em]">
                 <span>{w}</span>
               </span>
             ))}
@@ -111,7 +111,7 @@ export default function Pricing() {
         </div>
 
         {/* Plan cards */}
-        <div data-pricing-cards className="grid md:grid-cols-3 gap-5 lg:gap-7">
+        <div data-pricing-cards className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
           {PLANS.map((p) => {
             const featured = p.featured;
             return (
@@ -147,13 +147,13 @@ export default function Pricing() {
                   </span>
                 </div>
 
-                <h3 className="font-display font-black text-4xl md:text-5xl uppercase tracking-tight leading-[0.95] mt-5">
+                <h3 className="font-display font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight leading-[0.95] mt-5">
                   {p.name}
                 </h3>
 
                 <div className="mt-4 flex items-end gap-2">
                   <span
-                    className={`font-display font-black text-5xl md:text-6xl leading-none ${
+                    className={`font-display font-black text-4xl sm:text-5xl md:text-6xl leading-none ${
                       featured ? 'text-gold' : 'text-navy'
                     }`}
                   >
@@ -252,7 +252,8 @@ export default function Pricing() {
           </div>
 
           <div className="rounded-3xl overflow-hidden border-2 border-navy/12 bg-cream">
-            <table className="w-full text-left">
+            <div className="overflow-x-auto no-scrollbar">
+            <table className="w-full text-left min-w-[640px]">
               <thead>
                 <tr className="bg-navy text-cream text-[11px] uppercase tracking-[0.18em]">
                   <th className="py-4 px-5 font-bold">{t('deliverable')}</th>
@@ -309,6 +310,7 @@ export default function Pricing() {
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
 
           {/* Add-ons */}
@@ -333,7 +335,8 @@ export default function Pricing() {
             </div>
 
             <div className="rounded-3xl overflow-hidden border-2 border-navy/12">
-              <table className="w-full text-left">
+              <div className="overflow-x-auto no-scrollbar">
+              <table className="w-full text-left min-w-[640px]">
                 <thead>
                   <tr className="bg-navy text-cream text-[11px] uppercase tracking-[0.18em]">
                     <th className="py-4 px-5 font-bold w-16">{t('code')}</th>
@@ -359,7 +362,7 @@ export default function Pricing() {
                       <td className="py-3.5 px-5 text-navy/70 text-[12.5px]">{a.cadence}</td>
                       <td className="py-3.5 px-5 text-right font-display font-black text-lg text-navy">
                         {a.price.toLocaleString('en-US')}
-                        <span className="text-[10px] font-semibold text-navy/55 tracking-widest ml-1">
+                        <span className="text-[10px] font-semibold text-navy/55 tracking-widest ms-1">
                           AED
                         </span>
                       </td>
@@ -367,6 +370,7 @@ export default function Pricing() {
                   ))}
                 </tbody>
               </table>
+              </div>
             </div>
           </div>
 

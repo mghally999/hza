@@ -68,46 +68,69 @@ export default function Services() {
   const track = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (!track.current) return;
+    if (typeof window === 'undefined') return;
 
-      const totalWidth = track.current.scrollWidth;
-      const viewportW = window.innerWidth;
-      const distance = totalWidth - viewportW + 80;
+    // Respect reduced-motion and skip the heavy horizontal pin on small screens / touch.
+    const mql = window.matchMedia('(min-width: 1024px) and (hover: hover) and (pointer: fine)');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      let horizontalTween: gsap.core.Tween | null = null;
+    const setup = () => {
+      const ctx = gsap.context(() => {
+        if (!track.current || !root.current) return;
 
-      if (distance > 0) {
-        horizontalTween = gsap.to(track.current, {
-          x: locale === 'ar' ? distance : -distance,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: root.current,
-            start: 'top top',
-            end: () => `+=${distance}`,
-            scrub: 1,
-            pin: true,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-          },
-        });
-      }
+        const useHorizontal = mql.matches && !reduced;
 
-      gsap.utils.toArray<HTMLElement>('[data-svc-card]').forEach((card) => {
-        gsap.from(card, {
-          y: 60,
-          opacity: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: card,
-            containerAnimation: horizontalTween || undefined,
-            start: 'left 80%',
-          },
-        });
-      });
-    }, root);
+        if (useHorizontal) {
+          const totalWidth = track.current.scrollWidth;
+          const viewportW = window.innerWidth;
+          const distance = totalWidth - viewportW + 80;
 
+          let horizontalTween: gsap.core.Tween | null = null;
+          if (distance > 0) {
+            horizontalTween = gsap.to(track.current, {
+              x: locale === 'ar' ? distance : -distance,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: root.current,
+                start: 'top top',
+                end: () => `+=${distance}`,
+                scrub: 1,
+                pin: true,
+                anticipatePin: 1,
+                invalidateOnRefresh: true,
+              },
+            });
+          }
+
+          gsap.utils.toArray<HTMLElement>('[data-svc-card]').forEach((card) => {
+            gsap.from(card, {
+              y: 60,
+              opacity: 0,
+              duration: 0.8,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: card,
+                containerAnimation: horizontalTween || undefined,
+                start: 'left 80%',
+              },
+            });
+          });
+        } else {
+          gsap.utils.toArray<HTMLElement>('[data-svc-card]').forEach((card) => {
+            gsap.from(card, {
+              y: 40,
+              opacity: 0,
+              duration: 0.7,
+              ease: 'power3.out',
+              scrollTrigger: { trigger: card, start: 'top 85%' },
+            });
+          });
+        }
+      }, root);
+      return ctx;
+    };
+
+    const ctx = setup();
     return () => ctx.revert();
   }, [locale]);
 
@@ -116,11 +139,54 @@ export default function Services() {
       ref={root}
       id="services"
       className="relative overflow-hidden"
-      style={{ minHeight: '100vh', background: 'var(--navy)', color: 'var(--cream)' }}
+      style={{ background: 'var(--navy)', color: 'var(--cream)' }}
     >
       <div className="absolute inset-0 noise-overlay" />
 
-      <div className="relative h-screen flex flex-col">
+      {/* Mobile / tablet — vertical grid */}
+      <div className="relative max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10 pt-24 md:pt-32 pb-14 md:pb-20 w-full lg:hidden">
+        <div className="pill inline-flex" style={{ background: 'var(--cream)', color: 'var(--navy)' }}>
+          <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+          {t('tag')}
+        </div>
+        <h2 className="h-mega text-cream text-[clamp(40px,8vw,80px)] mt-5">
+          {t('title')}
+        </h2>
+        <p className="font-display text-gold text-lg sm:text-xl mt-4 uppercase tracking-tight">
+          {t('subtitle')}
+        </p>
+        <p className="text-cream/70 text-sm sm:text-[15px] leading-relaxed mt-3 max-w-2xl">{t('lead')}</p>
+
+        <div className="grid sm:grid-cols-2 gap-4 mt-10">
+          {items.map((it, i) => (
+            <article
+              key={it.key}
+              data-svc-card
+              className="rounded-3xl p-6 sm:p-7 flex flex-col gap-5 bg-cream/[0.04] border border-cream/10 backdrop-blur-sm"
+            >
+              <div className="flex items-start justify-between">
+                <div className="w-12 h-12 rounded-2xl bg-gold text-navy grid place-items-center">
+                  <div className="w-6 h-6">{it.icon}</div>
+                </div>
+                <span className="font-mono text-xs text-cream/40">
+                  {String(i + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
+                </span>
+              </div>
+              <div>
+                <h3 className="font-display font-black text-2xl sm:text-3xl uppercase leading-[0.95] tracking-tight mb-3">
+                  {t(`items.${it.key}.title` as any)}
+                </h3>
+                <p className="text-cream/70 text-sm leading-relaxed">
+                  {t(`items.${it.key}.body` as any)}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop — horizontal scroll with pin */}
+      <div className="relative h-screen lg:flex flex-col hidden" style={{ minHeight: '100vh' }}>
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 pt-24 md:pt-32 pb-10 w-full">
           <div className="pill inline-flex" style={{ background: 'var(--cream)', color: 'var(--navy)' }}>
             <span className="w-1.5 h-1.5 rounded-full bg-gold" />
